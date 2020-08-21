@@ -6,14 +6,18 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Enemy : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
     public float damage = 0.2f;
+    public float difficulty;
     private Rigidbody rb;
     private Vector3 movement;
 
     // Start is called before the first frame update
     void Start()
     {
+        difficulty = FindObjectOfType<WaveController>().difficulty;
+        moveSpeed = difficulty * 2;
+        damage = difficulty * damage;
         player = FindObjectOfType<RigidbodyFirstPersonController>().transform;
         rb = this.GetComponent<Rigidbody>();
     }

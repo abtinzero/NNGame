@@ -8,7 +8,9 @@ public class AudioManagerClip
 {
   public string Name;
   public AudioClip Clip;
-  public float Volume, Pitch;
+    [Range(0.0f, 1.0f)]
+    public float Volume;
+    public float Pitch;
   public bool Loop;
 }
 

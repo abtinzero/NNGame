@@ -11,7 +11,9 @@ public class WaveController : MonoBehaviour
     private int enemyNumber=0;
     public float waveRate=15;
     public int nEnemies;
+    public int difficulty;
     private float timeleft;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,10 @@ public class WaveController : MonoBehaviour
         {
             nextWaveTime = Time.time + waveRate;
             Spawn(enemyNumber,nEnemies);
+
             nEnemies++;
             enemyNumber++;
+            setDifficulty(nEnemies);
             if (enemyNumber == enemies.Length) enemyNumber = 0;
             if (waveRate >= 5)
             {
@@ -38,7 +42,7 @@ public class WaveController : MonoBehaviour
             else
             {
                 timeleft = waveRate;
-                waveRate = 6.66f;
+                waveRate = 4.99f;
             }
         }
     }
@@ -58,5 +62,9 @@ public class WaveController : MonoBehaviour
     {
         Vector3 v = new Vector3(Random.Range(-22, 22), 1, Random.Range(-22, 22));
         return v;
+    }
+    void setDifficulty(int diff)
+    {
+        difficulty = diff-3;
     }
 }

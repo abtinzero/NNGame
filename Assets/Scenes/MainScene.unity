@@ -1464,7 +1464,7 @@ MonoBehaviour:
   collisionTime: 0
   money: {fileID: 2032428195}
   helth: {fileID: 1140278092}
-  scoretext: {fileID: 0}
+  scoretext: {fileID: 645376599}
 --- !u!1 &971045448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2755,7 @@ MonoBehaviour:
   - {fileID: 5185328999417513758, guid: 8fb3156742861cd45aea0b131b4fb0b4, type: 3}
   - {fileID: 8638176728492603744, guid: c81870299706d7b4db4c186ca2920f52, type: 3}
   waveRate: 30
-  nEnemies: 3
+  nEnemies: 5
 --- !u!114 &2021208741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,7 +2772,7 @@ MonoBehaviour:
   - Name: Gunshot
     Clip: {fileID: 8300000, guid: b8cd4870fcda1a44daef67550c5dcf27, type: 3}
     Volume: 1
-    Pitch: 1
+    Pitch: 0.4
     Loop: 0
   - Name: Paolo
     Clip: {fileID: 8300000, guid: 2fd8a82fdce2d9b4dbee47d4ba572f00, type: 3}
@@ -2801,7 +2801,7 @@ MonoBehaviour:
     Loop: 0
   - Name: MainTheme
     Clip: {fileID: 8300000, guid: 4ab2d6b43ac30884e9ce15ceb5a204aa, type: 3}
-    Volume: 1
+    Volume: 0.7
     Pitch: 1
     Loop: 0
 --- !u!1 &2032428193

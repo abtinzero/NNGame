@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Playerstats : MonoBehaviour
@@ -10,15 +11,15 @@ public class Playerstats : MonoBehaviour
     public float collisionTime;
     public Text money;
     public Text helth;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
         money.text = "sordi " + sordi;
         helth.text = "helth " + health.ToString("F0");
         if (health <= 0)
@@ -41,6 +42,6 @@ public class Playerstats : MonoBehaviour
     }
     void GameOver()
     {
-        
+        SceneManager.LoadScene("MainScene");
     }
 }

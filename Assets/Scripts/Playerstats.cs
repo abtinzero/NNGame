@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Playerstats : MonoBehaviour
 {
     public float health=100;
     public float sordi=0;
+    public float score = 0;
     public float collisionTime;
     public Text money;
     public Text helth;
+    public TMP_Text scoretext;
    
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class Playerstats : MonoBehaviour
         }
         money.text = "sordi " + sordi;
         helth.text = "helth " + health.ToString("F0");
+        scoretext.text = "Score: " + score;
         if (health <= 0)
         {
             GameOver();
@@ -35,6 +39,12 @@ public class Playerstats : MonoBehaviour
     public void AddMoney(float money)
     {
         sordi += money;
+        
+    }
+    public void AddScore(float punteggio)
+    {
+        score += punteggio;
+
     }
     public float GetMoney()
     {

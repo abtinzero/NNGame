@@ -24,6 +24,8 @@ public class Controller : MonoBehaviour
         {
             money.AddMoney(-speedCost);
             rfpc.movementSettings.ForwardSpeed++;
+            rfpc.movementSettings.BackwardSpeed++;
+            rfpc.movementSettings.StrafeSpeed++;
         }
         
     }

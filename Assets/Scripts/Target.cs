@@ -21,6 +21,7 @@ public class Target : MonoBehaviour
     void Die()
     {
         FindObjectOfType<RigidbodyFirstPersonController>().GetComponent<Playerstats>().AddMoney(moneydrop);
+        FindObjectOfType<RigidbodyFirstPersonController>().GetComponent<Playerstats>().AddScore(moneydrop);
         Destroy(gameObject);
     }
 }

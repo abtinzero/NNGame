@@ -10,6 +10,7 @@ public class WaveController : MonoBehaviour
     private float nextWaveTime = 0f;
     private int enemyNumber=0;
     public float waveRate=15;
+    public int nEnemies;
     private float timeleft;
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,12 @@ public class WaveController : MonoBehaviour
     void Update()
     {
         timeleft -= Time.deltaTime;
-        wave.text = "next Wave:" + (timeleft.ToString("F2"));
+        wave.text = (timeleft.ToString("F2"));
         if ( Time.time >= nextWaveTime)
         {
             nextWaveTime = Time.time + waveRate;
-            Spawn(enemyNumber);
+            Spawn(enemyNumber,nEnemies);
+            nEnemies++;
             enemyNumber++;
             if (enemyNumber == enemies.Length) enemyNumber = 0;
             if (waveRate >= 5)
@@ -41,14 +43,14 @@ public class WaveController : MonoBehaviour
         }
     }
 
-    void Spawn(int enemy)
+    void Spawn(int enemy, int num)
     {
         GameObject hazard = enemies[Random.Range(0, enemies.Length)];
         //Vector3[] spawnPositions = new[] { new Vector3(20, 5, 0), new Vector3(20, 3, 0), new Vector3(20, 1, 0), new Vector3(20, -1, 0), new Vector3(20, -3, 0), new Vector3(20, -5, 0) };
         Quaternion spawnRotation = Quaternion.identity;
-        for (int i = 1; i < 6; i++)
+        for (int i = 0; i < num; i++)
         {
-            Instantiate(enemies[Random.Range(0, enemies.Length)], RandomSpawnLocation(), spawnRotation);
+            Instantiate(enemies[enemy], RandomSpawnLocation(), spawnRotation);
         }
     }
 
